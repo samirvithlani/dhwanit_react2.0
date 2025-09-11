@@ -3,6 +3,7 @@ import { UserNavbar } from "../../user/UserNavbar";
 import { AdminNavbar } from "../../admin/AdminNavbar";
 import { AdminProfile } from "../../admin/AdminProfile";
 import { UserProfile } from "../../user/UserProfile";
+import { MuiDemo1 } from "../mui/MuiDemo1";
 
 const router = createBrowserRouter([
         {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
                     element:<AdminProfile></AdminProfile>
                 }
             ]
+        },
+        {
+            path:"/muidemo1",
+            element:<MuiDemo1/>
         }
 ])
 
