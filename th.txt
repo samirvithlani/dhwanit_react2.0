@@ -1,0 +1,12 @@
+api : axios
+form : react-hook-form
+routing:react-router-dom
+mui:
+
+npm i axios react-hook-form react-router-dom
+
+admin
+user
+common
+
+main.jsx -> <BrowserRouter>
