@@ -1,12 +1,15 @@
-import { Dashboard } from "@mui/icons-material";
+import { Dashboard, Menu } from "@mui/icons-material";
 import {
+  AppBar,
   Box,
   CssBaseline,
   Drawer,
+  IconButton,
   List,
   ListItem,
   ListItemIcon,
   ListItemText,
+  Toolbar,
   Typography,
 } from "@mui/material";
 import React, { useState } from "react";
@@ -16,6 +19,10 @@ export const UserNavbar = () => {
   const drawerWidth = 240;
   const collapseWidth = 60;
   const [drawerState, setdrawerState] = useState(true);
+
+  const toggleDrawer = () => {
+    setdrawerState(!drawerState);
+  };
 
   const sidebarItems = [
     { text: "Dashboard", icon: <Dashboard />, path: "userdashboard" },
@@ -71,6 +78,30 @@ export const UserNavbar = () => {
           })}
         </List>
       </Drawer>
+      <AppBar
+        position="fixed"
+        sx={{
+          bgcolor: "#fff",
+          color: "#000",
+          boxShadow: "0 2px 4px rgba(0,0,0,0.05)",
+          borderBottom: "1px solid #0b44eeff",
+          ml: drawerState ? `${drawerWidth}px` : `${collapseWidth}px`,
+          width: `calc(100% - ${drawerState ? drawerWidth : collapseWidth}px)`,
+          transition: "all 0.3s ease",
+        }}
+      >
+        <Toolbar sx={{ justifyContent: "space-between" }}>
+          <IconButton onClick={toggleDrawer}>
+            <Menu />
+          </IconButton>
+          <Typography variant="h6" fontWeight={600}>
+            USER APP BAR
+          </Typography>
+          <Typography variant="body1" color="black">
+            Hello,User
+          </Typography>
+        </Toolbar>
+      </AppBar>
 
       <Box
         component="main"
