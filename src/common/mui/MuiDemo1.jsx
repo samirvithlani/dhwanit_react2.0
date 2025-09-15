@@ -21,8 +21,7 @@ export const MuiDemo1 = () => {
         height: "auto",
         border: "1px solid black",
         textAlign: "center",
-      }}
-    >
+      }}>
       <Typography variant="h4">DASHBOARD</Typography>
       <Grid container spacing={2} sx={{ mb: 2, m: 1 }}>
 
